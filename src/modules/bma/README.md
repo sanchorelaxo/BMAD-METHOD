@@ -8,15 +8,15 @@ Comprehensive AI-powered marketing and advertising framework providing specializ
 
 ## 📦 Package Contents
 
-- **11 Specialized Agents** - Expert AI personas for every marketing discipline
-- **4 Multi-Agent Workflows** - End-to-end processes from strategy to execution
+- **10 Specialized Agents** - Expert AI personas for every marketing discipline
+- **3 Multi-Agent Workflows** - End-to-end processes from strategy to execution
 - **24 Quality Checklists** - Validation for content, email, ads, SEO, and more
 - **25 Templates** - Ready-to-use marketing asset templates
 - **4 Data Files** - Knowledge base and frameworks reference
 
 ---
 
-## 🤖 Agent Team (11 Agents)
+## 🤖 Agent Team (10 Agents)
 
 | Agent | Icon | Description |
 |-------|------|-------------|

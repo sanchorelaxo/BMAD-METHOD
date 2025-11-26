@@ -1,0 +1,23 @@
+# <!-- Powered by BMAD-CORE™ -->
+# Migrated from v4 marketing-advertising expansion pack
+bundle:
+  name: Marketing & Advertising Team
+  icon: 📣
+  description: Complete marketing and advertising team for content creation, campaigns, and growth
+agents:
+  # Content & Copy
+  - content-writer
+  - video-marketing-specialist
+  # Channels
+  - email-marketer
+  - social-media-manager
+  - paid-ads-specialist
+  # Outreach & Partnerships
+  - outreach-specialist
+  # Technical Marketing
+  - seo-specialist
+  - analytics-automation-specialist
+  # Specialized
+  - ecommerce-specialist
+  - brand-creative-specialist
+party: "./default-party.csv"

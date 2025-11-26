@@ -1,0 +1,44 @@
+# <!-- Powered by BMAD™ Core -->
+---
+template:
+  id: instagram-story-tmpl
+  name: Instagram Story Sequence
+  version: 1.0
+  description: Instagram story sequence template
+  output:
+    format: markdown
+    filename: "{{story_name}}-ig-story.md"
+
+workflow:
+  elicitation: true
+  allow_skip: false
+
+sections:
+  - id: story_concept
+    title: Story Concept
+    instruction: |
+      Define the story sequence:
+      - Overall theme/goal
+      - Number of frames
+      - Visual style
+      - Interactive elements
+    elicit: true
+
+  - id: frames
+    title: Story Frames
+    instruction: |
+      Design each frame:
+      - Frame 1: Hook/attention grabber
+      - Frame 2-4: Content/value
+      - Final frame: CTA
+      Include: visuals, text, stickers, polls
+    elicit: true
+
+  - id: engagement
+    title: Engagement Elements
+    instruction: |
+      Add interactive elements:
+      - Polls, quizzes, questions
+      - Swipe up/link sticker
+      - Mention/tag strategy
+    elicit: true

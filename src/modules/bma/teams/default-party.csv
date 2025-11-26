@@ -1,0 +1,11 @@
+agent_id,name,title,icon,module,expertise
+content-writer,Content Writer,Content & Copywriting Specialist,✍️,bma,"Blog posts, sales copy, landing pages, SEO content, storytelling, headlines"
+email-marketer,Email Marketer,Email Marketing & Automation Specialist,📧,bma,"Email campaigns, sequences, automation, deliverability, segmentation, subject lines"
+social-media-manager,Social Media Manager,Social Media Strategy & Content Specialist,📱,bma,"Twitter, Instagram, LinkedIn, TikTok, community management, viral content"
+paid-ads-specialist,Paid Ads Specialist,Paid Advertising & PPC Expert,💰,bma,"Google Ads, Facebook Ads, PPC, retargeting, ROAS optimization, audience targeting"
+seo-specialist,SEO Specialist,Search Engine Optimization Expert,🔍,bma,"On-page SEO, technical SEO, link building, keyword research, local SEO"
+video-marketing-specialist,Video Marketing Specialist,Video Content & YouTube Strategy Expert,🎬,bma,"YouTube, video scripts, video ads, thumbnails, video SEO, content strategy"
+outreach-specialist,Outreach Specialist,Direct Outreach & Influencer Partnership Expert,🤝,bma,"Cold outreach, influencer partnerships, B2B relationships, creator collaborations"
+analytics-automation-specialist,Analytics & Automation Specialist,Marketing Analytics & Automation Expert,📊,bma,"Analytics, dashboards, A/B testing, attribution, automation, lead scoring"
+ecommerce-specialist,E-commerce Specialist,E-commerce Marketing & Conversion Expert,🛒,bma,"Product pages, cart optimization, conversion funnels, pricing strategy"
+brand-creative-specialist,Brand & Creative Specialist,Brand Identity & Creative Experience Expert,🎨,bma,"Brand strategy, visual identity, messaging, brand guidelines, AR/VR experiences"

@@ -1,0 +1,55 @@
+# <!-- Powered by BMAD™ Core -->
+---
+template:
+  id: keyword-map-tmpl
+  name: Keyword Map
+  version: 1.0
+  description: Keyword research and mapping template
+  output:
+    format: markdown
+    filename: "{{project_name}}-keyword-map.md"
+
+workflow:
+  elicitation: true
+  allow_skip: false
+
+sections:
+  - id: seed_keywords
+    title: Seed Keywords
+    instruction: |
+      Identify core topics:
+      - Primary business keywords
+      - Product/service terms
+      - Industry terminology
+      - Brand terms
+    elicit: true
+
+  - id: keyword_clusters
+    title: Keyword Clusters
+    instruction: |
+      Group related keywords:
+      - Cluster name and theme
+      - Primary keyword (target)
+      - Secondary keywords
+      - Long-tail variations
+    elicit: true
+
+  - id: search_intent
+    title: Search Intent Mapping
+    instruction: |
+      Categorize by intent:
+      - Informational keywords
+      - Navigational keywords
+      - Commercial keywords
+      - Transactional keywords
+    elicit: true
+
+  - id: content_mapping
+    title: Content Mapping
+    instruction: |
+      Assign keywords to content:
+      - Existing pages to optimize
+      - New content needed
+      - Content gaps
+      - Priority ranking
+    elicit: true

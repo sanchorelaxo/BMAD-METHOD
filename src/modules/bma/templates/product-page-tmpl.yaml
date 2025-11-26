@@ -1,0 +1,65 @@
+# <!-- Powered by BMAD™ Core -->
+---
+template:
+  id: product-page-tmpl
+  name: Product Page
+  version: 1.0
+  description: E-commerce product page optimization template
+  output:
+    format: markdown
+    filename: "{{product_name}}-page.md"
+
+workflow:
+  elicitation: true
+  allow_skip: false
+
+sections:
+  - id: product_title
+    title: Product Title
+    instruction: |
+      Optimize the product title:
+      - Primary keyword included
+      - Key attributes (size, color, etc.)
+      - Brand name
+      - Under 80 characters
+    elicit: true
+
+  - id: product_description
+    title: Product Description
+    instruction: |
+      Write compelling description:
+      - Benefits-focused opening
+      - Key features listed
+      - Use cases/scenarios
+      - Technical specifications
+    elicit: true
+
+  - id: visual_requirements
+    title: Visual Requirements
+    instruction: |
+      Define image/video needs:
+      - Main product images
+      - Lifestyle images
+      - Detail/zoom shots
+      - Video content
+    elicit: true
+
+  - id: trust_elements
+    title: Trust Elements
+    instruction: |
+      Add credibility:
+      - Customer reviews display
+      - Trust badges
+      - Guarantees/warranties
+      - Social proof
+    elicit: true
+
+  - id: conversion_elements
+    title: Conversion Elements
+    instruction: |
+      Optimize for purchase:
+      - CTA button design
+      - Urgency elements
+      - Cross-sell/upsell
+      - Shipping/returns info
+    elicit: true

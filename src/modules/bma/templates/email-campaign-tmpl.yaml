@@ -1,0 +1,75 @@
+# <!-- Powered by BMAD™ Core -->
+---
+template:
+  id: email-campaign-tmpl
+  name: Email Campaign
+  version: 1.0
+  description: Email campaign planning and copy template
+  output:
+    format: markdown
+    filename: "{{campaign_name}}-email-campaign.md"
+
+workflow:
+  elicitation: true
+  allow_skip: false
+
+sections:
+  - id: campaign_goal
+    title: Campaign Goal
+    instruction: |
+      Define the email campaign objective:
+      - Primary goal (sales, leads, engagement, etc.)
+      - Target metrics
+      - Audience segment
+      - Campaign type (broadcast, sequence, triggered)
+    elicit: true
+
+  - id: email_sequence
+    title: Email Sequence Overview
+    instruction: |
+      Map out the email sequence:
+      - Number of emails
+      - Timing between emails
+      - Purpose of each email
+      - Progression logic
+    elicit: true
+
+  - id: email_1
+    title: Email 1 - [Purpose]
+    instruction: |
+      Create the first email:
+      - Subject line (+ A/B variant)
+      - Preview text
+      - Email body copy
+      - Call-to-action
+    elicit: true
+
+  - id: email_2
+    title: Email 2 - [Purpose]
+    instruction: |
+      Create the second email:
+      - Subject line (+ A/B variant)
+      - Preview text
+      - Email body copy
+      - Call-to-action
+    elicit: true
+
+  - id: email_3
+    title: Email 3 - [Purpose]
+    instruction: |
+      Create the third email:
+      - Subject line (+ A/B variant)
+      - Preview text
+      - Email body copy
+      - Call-to-action
+    elicit: true
+
+  - id: segmentation
+    title: Segmentation & Personalization
+    instruction: |
+      Define targeting approach:
+      - Audience segments
+      - Personalization tokens
+      - Dynamic content rules
+      - Exclusion criteria
+    elicit: true

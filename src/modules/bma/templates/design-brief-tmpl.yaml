@@ -1,0 +1,65 @@
+# <!-- Powered by BMAD™ Core -->
+---
+template:
+  id: design-brief-tmpl
+  name: Design Brief
+  version: 1.0
+  description: Creative design brief template
+  output:
+    format: markdown
+    filename: "{{project_name}}-design-brief.md"
+
+workflow:
+  elicitation: true
+  allow_skip: false
+
+sections:
+  - id: project_overview
+    title: Project Overview
+    instruction: |
+      Define the project:
+      - Project name and type
+      - Background context
+      - Objectives
+      - Deliverables needed
+    elicit: true
+
+  - id: target_audience
+    title: Target Audience
+    instruction: |
+      Define who this is for:
+      - Primary audience
+      - Demographics/psychographics
+      - What they should feel
+      - Desired action
+    elicit: true
+
+  - id: creative_direction
+    title: Creative Direction
+    instruction: |
+      Guide the design:
+      - Visual style/mood
+      - Color preferences
+      - Typography direction
+      - Inspiration/references
+    elicit: true
+
+  - id: requirements
+    title: Technical Requirements
+    instruction: |
+      Specify deliverables:
+      - Sizes/formats needed
+      - File types
+      - Platform requirements
+      - Brand guidelines to follow
+    elicit: true
+
+  - id: timeline
+    title: Timeline & Process
+    instruction: |
+      Define the schedule:
+      - Key milestones
+      - Review rounds
+      - Final deadline
+      - Approval process
+    elicit: true

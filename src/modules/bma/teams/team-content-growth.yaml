@@ -1,0 +1,11 @@
+# <!-- Powered by BMAD-CORE™ -->
+bundle:
+  name: Content & Growth Team
+  icon: 📈
+  description: Focused team for content marketing and organic growth strategies
+agents:
+  - content-writer
+  - seo-specialist
+  - social-media-manager
+  - video-marketing-specialist
+party: "./default-party.csv"

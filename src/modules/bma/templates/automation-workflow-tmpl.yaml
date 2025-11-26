@@ -1,0 +1,65 @@
+# <!-- Powered by BMAD™ Core -->
+---
+template:
+  id: automation-workflow-tmpl
+  name: Automation Workflow
+  version: 1.0
+  description: Marketing automation workflow template
+  output:
+    format: markdown
+    filename: "{{workflow_name}}-automation.md"
+
+workflow:
+  elicitation: true
+  allow_skip: false
+
+sections:
+  - id: workflow_goal
+    title: Workflow Goal
+    instruction: |
+      Define the automation:
+      - Primary objective
+      - Target audience/segment
+      - Success metrics
+      - Integration requirements
+    elicit: true
+
+  - id: trigger
+    title: Trigger Conditions
+    instruction: |
+      What starts the workflow:
+      - Entry trigger(s)
+      - Qualifying criteria
+      - Exclusion rules
+      - Re-entry rules
+    elicit: true
+
+  - id: workflow_steps
+    title: Workflow Steps
+    instruction: |
+      Map the automation flow:
+      - Step 1: [Action]
+      - Step 2: [Wait/Decision]
+      - Step 3: [Action]
+      - Branch logic if needed
+    elicit: true
+
+  - id: exit_conditions
+    title: Exit Conditions
+    instruction: |
+      When to end the workflow:
+      - Goal completion
+      - Timeout rules
+      - Suppression triggers
+      - Transition to other workflows
+    elicit: true
+
+  - id: testing_plan
+    title: Testing Plan
+    instruction: |
+      Validation approach:
+      - Test scenarios
+      - QA checklist
+      - Monitoring setup
+      - Rollout plan
+    elicit: true

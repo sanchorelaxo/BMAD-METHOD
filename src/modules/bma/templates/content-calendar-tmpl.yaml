@@ -1,0 +1,65 @@
+# <!-- Powered by BMAD™ Core -->
+---
+template:
+  id: content-calendar-tmpl
+  name: Content Calendar
+  version: 1.0
+  description: Multi-channel content calendar template
+  output:
+    format: markdown
+    filename: "{{month}}-content-calendar.md"
+
+workflow:
+  elicitation: true
+  allow_skip: false
+
+sections:
+  - id: monthly_theme
+    title: Monthly Theme & Goals
+    instruction: |
+      Define the month's content focus:
+      - Primary theme/campaign
+      - Content goals for the month
+      - Key dates and events
+      - Promotional priorities
+    elicit: true
+
+  - id: content_pillars
+    title: Content Pillars
+    instruction: |
+      Define content categories:
+      - Pillar 1: [Theme] - % of content
+      - Pillar 2: [Theme] - % of content
+      - Pillar 3: [Theme] - % of content
+      - Content mix rationale
+    elicit: true
+
+  - id: weekly_breakdown
+    title: Weekly Content Breakdown
+    instruction: |
+      For each week, define:
+      - Week focus/mini-theme
+      - Content pieces by channel
+      - Publishing schedule
+      - Required assets
+    elicit: true
+
+  - id: channel_specifics
+    title: Channel-Specific Plans
+    instruction: |
+      For each active channel:
+      - Posting frequency
+      - Content types
+      - Best posting times
+      - Engagement strategy
+    elicit: true
+
+  - id: content_briefs
+    title: Content Briefs
+    instruction: |
+      For key content pieces:
+      - Topic and angle
+      - Target keywords (if applicable)
+      - Key messages
+      - CTA and goal
+    elicit: true

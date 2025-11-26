@@ -1,0 +1,98 @@
+# Paid Advertising Campaign Workflow
+# Migrated from v4 marketing-advertising expansion pack
+name: paid-advertising
+description: |
+  Complete workflow for launching and optimizing paid
+  advertising campaigns across platforms.
+author: "BMad Marketing"
+
+# Critical variables from config
+config_source: "{project-root}/{bmad_folder}/bma/config.yaml"
+marketing_output_folder: "{config_source}:marketing_output_folder"
+user_name: "{config_source}:user_name"
+communication_language: "{config_source}:communication_language"
+date: system-generated
+
+# Workflow components
+installed_path: "{project-root}/{bmad_folder}/bma/workflows/paid-advertising"
+instructions: "{installed_path}/instructions.md"
+
+# Templates
+facebook_ad_template: "{project-root}/{bmad_folder}/bma/templates/facebook-ad-tmpl.yaml"
+google_ads_template: "{project-root}/{bmad_folder}/bma/templates/google-ads-tmpl.yaml"
+campaign_structure_template: "{project-root}/{bmad_folder}/bma/templates/campaign-structure-tmpl.yaml"
+
+# Checklists
+paid_ads_checklist: "{project-root}/{bmad_folder}/bma/checklists/paid-ads-checklist.md"
+campaign_launch_checklist: "{project-root}/{bmad_folder}/bma/checklists/campaign-launch-checklist.md"
+
+# Output files
+status_file: "{marketing_output_folder}/paid-ads-status.yaml"
+default_output_file: "{marketing_output_folder}/paid-advertising-campaign.md"
+
+standalone: true
+
+# Multi-agent workflow steps
+agents:
+  - paid-ads-specialist
+  - content-writer
+  - analytics-automation-specialist
+
+steps:
+  - id: campaign_strategy
+    title: Define campaign strategy
+    agent: paid-ads-specialist
+    outputs: campaign_strategy
+
+  - id: audience_targeting
+    title: Build audience targeting
+    agent: paid-ads-specialist
+    inputs: campaign_strategy
+    outputs: audience_config
+
+  - id: ad_copy
+    title: Create ad copy
+    agent: content-writer
+    inputs: campaign_strategy
+    outputs: ad_copy_drafts
+
+  - id: ad_review
+    title: Review ads
+    agent: paid-ads-specialist
+    inputs: ad_copy_drafts
+    uses: paid_ads_checklist
+    outputs: final_ads
+
+  - id: tracking_setup
+    title: Configure tracking
+    agent: analytics-automation-specialist
+    inputs: campaign_strategy
+    outputs: tracking_config
+
+  - id: campaign_launch
+    title: Launch campaign
+    agent: paid-ads-specialist
+    inputs:
+      - final_ads
+      - audience_config
+      - tracking_config
+    outputs: live_campaign
+
+outputs:
+  - final_ads
+  - live_campaign
+  - tracking_config
+
+web_bundle:
+  name: "paid-advertising"
+  description: "Paid advertising campaign workflow"
+  author: "BMad Marketing"
+  instructions: "{bmad_folder}/bma/workflows/paid-advertising/instructions.md"
+  validation: "{bmad_folder}/bma/checklists/paid-ads-checklist.md"
+  web_bundle_files:
+    - "{bmad_folder}/bma/workflows/paid-advertising/instructions.md"
+    - "{bmad_folder}/bma/templates/facebook-ad-tmpl.yaml"
+    - "{bmad_folder}/bma/templates/google-ads-tmpl.yaml"
+    - "{bmad_folder}/bma/templates/campaign-structure-tmpl.yaml"
+    - "{bmad_folder}/bma/checklists/paid-ads-checklist.md"
+    - "{bmad_folder}/bma/checklists/campaign-launch-checklist.md"

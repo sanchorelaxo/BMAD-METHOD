@@ -1,0 +1,65 @@
+# <!-- Powered by BMAD™ Core -->
+---
+template:
+  id: analytics-report-tmpl
+  name: Analytics Report
+  version: 1.0
+  description: Marketing analytics report template
+  output:
+    format: markdown
+    filename: "{{period}}-analytics-report.md"
+
+workflow:
+  elicitation: true
+  allow_skip: false
+
+sections:
+  - id: executive_summary
+    title: Executive Summary
+    instruction: |
+      High-level overview:
+      - Key metrics summary
+      - Performance vs goals
+      - Top wins
+      - Areas of concern
+    elicit: true
+
+  - id: traffic_analysis
+    title: Traffic Analysis
+    instruction: |
+      Website/app traffic:
+      - Total sessions/users
+      - Traffic sources breakdown
+      - Top pages
+      - Trends and changes
+    elicit: true
+
+  - id: conversion_analysis
+    title: Conversion Analysis
+    instruction: |
+      Conversion performance:
+      - Conversion rates
+      - Goal completions
+      - Funnel analysis
+      - Revenue attribution
+    elicit: true
+
+  - id: channel_performance
+    title: Channel Performance
+    instruction: |
+      By marketing channel:
+      - Organic search
+      - Paid advertising
+      - Social media
+      - Email marketing
+    elicit: true
+
+  - id: recommendations
+    title: Recommendations
+    instruction: |
+      Action items:
+      - Optimization opportunities
+      - Tests to run
+      - Budget recommendations
+      - Next period focus
+    elicit: true

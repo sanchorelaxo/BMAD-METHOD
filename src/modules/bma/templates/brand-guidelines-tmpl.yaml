@@ -1,0 +1,55 @@
+# <!-- Powered by BMAD™ Core -->
+---
+template:
+  id: brand-guidelines-tmpl
+  name: Brand Guidelines
+  version: 1.0
+  description: Brand identity guidelines template
+  output:
+    format: markdown
+    filename: "{{brand_name}}-guidelines.md"
+
+workflow:
+  elicitation: true
+  allow_skip: false
+
+sections:
+  - id: brand_overview
+    title: Brand Overview
+    instruction: |
+      Define brand foundation:
+      - Mission statement
+      - Vision statement
+      - Brand values
+      - Brand personality
+    elicit: true
+
+  - id: visual_identity
+    title: Visual Identity
+    instruction: |
+      Document visual elements:
+      - Logo usage rules
+      - Color palette (primary, secondary)
+      - Typography system
+      - Imagery style
+    elicit: true
+
+  - id: voice_tone
+    title: Voice & Tone
+    instruction: |
+      Define brand voice:
+      - Voice characteristics
+      - Tone variations by context
+      - Writing style guidelines
+      - Do's and don'ts
+    elicit: true
+
+  - id: applications
+    title: Brand Applications
+    instruction: |
+      Usage examples:
+      - Digital applications
+      - Print materials
+      - Social media
+      - Merchandise
+    elicit: true

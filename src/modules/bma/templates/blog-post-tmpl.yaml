@@ -1,0 +1,65 @@
+# <!-- Powered by BMAD™ Core -->
+---
+template:
+  id: blog-post-tmpl
+  name: Blog Post
+  version: 1.0
+  description: SEO-optimized blog post template
+  output:
+    format: markdown
+    filename: "{{post_slug}}-blog.md"
+
+workflow:
+  elicitation: true
+  allow_skip: false
+
+sections:
+  - id: topic_research
+    title: Topic & Keyword Research
+    instruction: |
+      Define the post focus:
+      - Primary keyword
+      - Secondary keywords
+      - Search intent
+      - Target audience
+    elicit: true
+
+  - id: headline
+    title: Headline & Meta
+    instruction: |
+      Create title and meta:
+      - H1 headline (with keyword)
+      - Meta title (under 60 chars)
+      - Meta description (under 160 chars)
+      - URL slug
+    elicit: true
+
+  - id: outline
+    title: Post Outline
+    instruction: |
+      Structure the content:
+      - Introduction hook
+      - Main sections (H2s)
+      - Subsections (H3s)
+      - Conclusion
+    elicit: true
+
+  - id: content
+    title: Content Draft
+    instruction: |
+      Write the full post:
+      - Engaging introduction
+      - Value-packed body
+      - Examples and proof
+      - Clear conclusion with CTA
+    elicit: true
+
+  - id: optimization
+    title: SEO Optimization
+    instruction: |
+      Optimize for search:
+      - Internal links
+      - External links
+      - Image alt text
+      - Featured snippet optimization
+    elicit: true

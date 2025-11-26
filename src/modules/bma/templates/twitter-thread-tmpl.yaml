@@ -1,0 +1,44 @@
+# <!-- Powered by BMAD™ Core -->
+---
+template:
+  id: twitter-thread-tmpl
+  name: Twitter Thread
+  version: 1.0
+  description: Twitter/X thread template
+  output:
+    format: markdown
+    filename: "{{thread_topic}}-thread.md"
+
+workflow:
+  elicitation: true
+  allow_skip: false
+
+sections:
+  - id: hook_tweet
+    title: Hook Tweet (Tweet 1)
+    instruction: |
+      Create the opening hook:
+      - Stop-the-scroll opening line
+      - Promise of value
+      - Curiosity gap
+      - Under 280 characters
+    elicit: true
+
+  - id: body_tweets
+    title: Body Tweets (2-8)
+    instruction: |
+      Develop the main content:
+      - One idea per tweet
+      - Easy to read formatting
+      - Build on previous tweets
+      - Include examples/proof
+    elicit: true
+
+  - id: closing_tweet
+    title: Closing Tweet
+    instruction: |
+      Wrap up and drive action:
+      - Summarize key takeaway
+      - Clear CTA
+      - Engagement prompt
+    elicit: true

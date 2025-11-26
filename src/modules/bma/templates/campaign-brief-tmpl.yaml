@@ -1,0 +1,85 @@
+# <!-- Powered by BMAD™ Core -->
+---
+template:
+  id: campaign-brief-tmpl
+  name: Campaign Brief
+  version: 1.0
+  description: Comprehensive marketing campaign brief template
+  output:
+    format: markdown
+    filename: "{{campaign_name}}-brief.md"
+
+workflow:
+  elicitation: true
+  allow_skip: false
+
+sections:
+  - id: campaign_overview
+    title: Campaign Overview
+    instruction: |
+      Define the campaign fundamentals:
+      - Campaign name and tagline
+      - Campaign type (awareness, lead gen, conversion, etc.)
+      - Duration and key dates
+      - Budget range
+    elicit: true
+
+  - id: objectives
+    title: Objectives & KPIs
+    instruction: |
+      Define measurable campaign objectives:
+      - Primary objective (SMART format)
+      - Secondary objectives
+      - Key Performance Indicators
+      - Success benchmarks
+    elicit: true
+
+  - id: target_audience
+    title: Target Audience
+    instruction: |
+      Define the target audience:
+      - Primary persona description
+      - Demographics and psychographics
+      - Pain points and motivations
+      - Where they spend time online
+    elicit: true
+
+  - id: messaging
+    title: Key Messaging
+    instruction: |
+      Define campaign messaging:
+      - Core value proposition
+      - Key messages (3-5)
+      - Proof points
+      - Call-to-action
+    elicit: true
+
+  - id: channels
+    title: Channel Strategy
+    instruction: |
+      Define channel mix:
+      - Primary channels
+      - Supporting channels
+      - Content types per channel
+      - Posting/publishing frequency
+    elicit: true
+
+  - id: creative_requirements
+    title: Creative Requirements
+    instruction: |
+      Define creative needs:
+      - Visual style direction
+      - Asset specifications
+      - Copy requirements
+      - Brand guidelines notes
+    elicit: true
+
+  - id: timeline
+    title: Timeline & Milestones
+    instruction: |
+      Define campaign timeline:
+      - Key milestones
+      - Content deadlines
+      - Launch date
+      - Review checkpoints
+    elicit: true

@@ -1,0 +1,63 @@
+# <!-- Powered by BMAD™ Core -->
+---
+template:
+  id: sales-copy-tmpl
+  name: Sales Copy
+  version: 1.0
+  description: Conversion-focused sales copy template
+  output:
+    format: markdown
+    filename: "{{product_name}}-sales-copy.md"
+
+workflow:
+  elicitation: true
+  allow_skip: false
+
+sections:
+  - id: headline
+    title: Headline
+    instruction: |
+      Create the main headline:
+      - Attention-grabbing
+      - Clear benefit or promise
+      - Target audience specific
+      - Creates curiosity
+    elicit: true
+
+  - id: problem
+    title: Problem Statement
+    instruction: |
+      Identify the pain:
+      - Describe the problem
+      - Agitate the pain
+      - Show understanding
+    elicit: true
+
+  - id: solution
+    title: Solution & Benefits
+    instruction: |
+      Present your offer:
+      - Introduce the solution
+      - Key benefits (not features)
+      - Transformation promise
+    elicit: true
+
+  - id: proof
+    title: Proof & Credibility
+    instruction: |
+      Build trust:
+      - Testimonials
+      - Case studies
+      - Statistics
+      - Authority signals
+    elicit: true
+
+  - id: offer
+    title: Offer & CTA
+    instruction: |
+      Close the sale:
+      - Clear offer details
+      - Price and value
+      - Guarantee/risk reversal
+      - Strong call-to-action
+    elicit: true

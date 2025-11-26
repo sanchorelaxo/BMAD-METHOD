@@ -1,0 +1,55 @@
+# <!-- Powered by BMAD™ Core -->
+---
+template:
+  id: google-ads-tmpl
+  name: Google Ads Campaign
+  version: 1.0
+  description: Google Ads campaign structure template
+  output:
+    format: markdown
+    filename: "{{campaign_name}}-google-ads.md"
+
+workflow:
+  elicitation: true
+  allow_skip: false
+
+sections:
+  - id: campaign_setup
+    title: Campaign Setup
+    instruction: |
+      Define campaign structure:
+      - Campaign type
+      - Bidding strategy
+      - Budget and schedule
+      - Geographic targeting
+    elicit: true
+
+  - id: ad_groups
+    title: Ad Groups
+    instruction: |
+      Structure ad groups:
+      - Ad group themes
+      - Keywords per group
+      - Match types
+      - Negative keywords
+    elicit: true
+
+  - id: ad_copy
+    title: Ad Copy
+    instruction: |
+      Write responsive search ads:
+      - Headlines (up to 15)
+      - Descriptions (up to 4)
+      - Display path
+      - Final URL
+    elicit: true
+
+  - id: extensions
+    title: Ad Extensions
+    instruction: |
+      Configure extensions:
+      - Sitelinks
+      - Callouts
+      - Structured snippets
+      - Call extensions
+    elicit: true

@@ -1,0 +1,64 @@
+# <!-- Powered by BMAD™ Core -->
+---
+template:
+  id: facebook-ad-tmpl
+  name: Facebook Ad
+  version: 1.0
+  description: Facebook/Instagram ad copy template
+  output:
+    format: markdown
+    filename: "{{ad_name}}-facebook-ad.md"
+
+workflow:
+  elicitation: true
+  allow_skip: false
+
+sections:
+  - id: ad_objective
+    title: Ad Objective & Targeting
+    instruction: |
+      Define the ad setup:
+      - Campaign objective
+      - Target audience
+      - Placement preferences
+      - Budget/schedule
+    elicit: true
+
+  - id: primary_text
+    title: Primary Text
+    instruction: |
+      Write the main ad copy:
+      - Hook in first line
+      - Value proposition
+      - Social proof if applicable
+      - Clear CTA
+      - Under 125 characters for optimal display
+    elicit: true
+
+  - id: headline
+    title: Headline
+    instruction: |
+      Create the headline:
+      - Under 40 characters
+      - Clear benefit or offer
+      - Action-oriented
+    elicit: true
+
+  - id: description
+    title: Description
+    instruction: |
+      Write the link description:
+      - Supporting information
+      - Urgency or scarcity
+      - Under 30 characters
+    elicit: true
+
+  - id: creative_direction
+    title: Creative Direction
+    instruction: |
+      Define visual requirements:
+      - Image/video concept
+      - Text overlay (under 20%)
+      - Brand elements
+      - Format specifications
+    elicit: true

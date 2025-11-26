@@ -1,0 +1,55 @@
+# <!-- Powered by BMAD™ Core -->
+---
+template:
+  id: campaign-structure-tmpl
+  name: Campaign Structure
+  version: 1.0
+  description: Paid advertising campaign structure template
+  output:
+    format: markdown
+    filename: "{{campaign_name}}-structure.md"
+
+workflow:
+  elicitation: true
+  allow_skip: false
+
+sections:
+  - id: campaign_overview
+    title: Campaign Overview
+    instruction: |
+      Define campaign fundamentals:
+      - Campaign name and objective
+      - Platform(s)
+      - Budget allocation
+      - Timeline
+    elicit: true
+
+  - id: audience_strategy
+    title: Audience Strategy
+    instruction: |
+      Define targeting approach:
+      - Primary audiences
+      - Lookalike/similar audiences
+      - Retargeting segments
+      - Exclusions
+    elicit: true
+
+  - id: creative_strategy
+    title: Creative Strategy
+    instruction: |
+      Plan creative approach:
+      - Ad formats
+      - Messaging themes
+      - A/B test plan
+      - Asset requirements
+    elicit: true
+
+  - id: measurement
+    title: Measurement Plan
+    instruction: |
+      Define success metrics:
+      - Primary KPIs
+      - Secondary metrics
+      - Attribution model
+      - Reporting cadence
+    elicit: true

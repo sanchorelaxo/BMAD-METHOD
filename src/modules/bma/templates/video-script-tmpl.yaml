@@ -1,0 +1,61 @@
+# <!-- Powered by BMAD™ Core -->
+---
+template:
+  id: video-script-tmpl
+  name: Video Script
+  version: 1.0
+  description: Video script template for ads and content
+  output:
+    format: markdown
+    filename: "{{video_name}}-script.md"
+
+workflow:
+  elicitation: true
+  allow_skip: false
+
+sections:
+  - id: hook
+    title: Opening Hook (0-5 seconds)
+    instruction: |
+      Create an attention-grabbing opening:
+      - Pattern interrupt or surprising statement
+      - Direct question to viewer
+      - Bold claim or statistic
+      - Visual hook description
+    elicit: true
+
+  - id: problem
+    title: Problem Statement
+    instruction: |
+      Identify the viewer's pain point:
+      - Describe the problem clearly
+      - Show empathy and understanding
+      - Agitate the pain slightly
+    elicit: true
+
+  - id: solution
+    title: Solution Introduction
+    instruction: |
+      Present your solution:
+      - Introduce product/service
+      - Key benefits (not features)
+      - How it solves the problem
+    elicit: true
+
+  - id: proof
+    title: Proof & Credibility
+    instruction: |
+      Build trust with evidence:
+      - Testimonials or results
+      - Statistics or data
+      - Authority signals
+    elicit: true
+
+  - id: cta
+    title: Call-to-Action
+    instruction: |
+      Drive action:
+      - Clear, specific next step
+      - Urgency element if appropriate
+      - Value reminder
+    elicit: true

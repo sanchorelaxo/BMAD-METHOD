@@ -1,0 +1,55 @@
+# <!-- Powered by BMAD™ Core -->
+---
+template:
+  id: cart-recovery-tmpl
+  name: Cart Recovery Sequence
+  version: 1.0
+  description: Cart abandonment email sequence template
+  output:
+    format: markdown
+    filename: "{{brand_name}}-cart-recovery.md"
+
+workflow:
+  elicitation: true
+  allow_skip: false
+
+sections:
+  - id: email_1
+    title: Email 1 - Reminder (1 hour)
+    instruction: |
+      First reminder email:
+      - Subject line
+      - Friendly reminder tone
+      - Show cart contents
+      - Easy return to cart
+    elicit: true
+
+  - id: email_2
+    title: Email 2 - Urgency (24 hours)
+    instruction: |
+      Second email with urgency:
+      - Subject line
+      - Stock/availability warning
+      - Customer support offer
+      - Clear CTA
+    elicit: true
+
+  - id: email_3
+    title: Email 3 - Incentive (48 hours)
+    instruction: |
+      Third email with incentive:
+      - Subject line
+      - Discount or free shipping
+      - Time-limited offer
+      - Final push
+    elicit: true
+
+  - id: email_4
+    title: Email 4 - Final (72 hours)
+    instruction: |
+      Last chance email:
+      - Subject line
+      - Cart expiration warning
+      - Last offer reminder
+      - Alternative products
+    elicit: true

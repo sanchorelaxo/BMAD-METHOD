@@ -1,0 +1,51 @@
+# <!-- Powered by BMAD™ Core -->
+---
+template:
+  id: youtube-ad-tmpl
+  name: YouTube Ad Script
+  version: 1.0
+  description: YouTube advertising script template
+  output:
+    format: markdown
+    filename: "{{ad_name}}-youtube-ad.md"
+
+workflow:
+  elicitation: true
+  allow_skip: false
+
+sections:
+  - id: ad_type
+    title: Ad Format & Specs
+    instruction: |
+      Define the ad format:
+      - Ad type (skippable, non-skippable, bumper)
+      - Duration target
+      - Placement (in-stream, discovery)
+    elicit: true
+
+  - id: hook
+    title: 5-Second Hook
+    instruction: |
+      Critical opening before skip button:
+      - Immediate attention grabber
+      - Brand mention timing
+      - Visual description
+    elicit: true
+
+  - id: body
+    title: Main Message
+    instruction: |
+      Core ad content:
+      - Value proposition
+      - Key benefits
+      - Proof elements
+    elicit: true
+
+  - id: cta
+    title: Call-to-Action
+    instruction: |
+      Closing and CTA:
+      - Clear action to take
+      - URL/destination
+      - Urgency element
+    elicit: true

@@ -1,0 +1,65 @@
+# <!-- Powered by BMAD™ Core -->
+---
+template:
+  id: drip-sequence-tmpl
+  name: Email Drip Sequence
+  version: 1.0
+  description: Automated email drip sequence template
+  output:
+    format: markdown
+    filename: "{{sequence_name}}-drip.md"
+
+workflow:
+  elicitation: true
+  allow_skip: false
+
+sections:
+  - id: sequence_goal
+    title: Sequence Goal
+    instruction: |
+      Define the drip campaign:
+      - Primary objective
+      - Target segment
+      - Entry trigger
+      - Exit conditions
+    elicit: true
+
+  - id: email_1
+    title: Email 1 - Welcome/Introduction
+    instruction: |
+      First email (Day 0):
+      - Subject line
+      - Welcome message
+      - Set expectations
+      - Immediate value
+    elicit: true
+
+  - id: email_2
+    title: Email 2 - Value Delivery
+    instruction: |
+      Second email (Day 2-3):
+      - Subject line
+      - Educational content
+      - Build trust
+      - Soft engagement
+    elicit: true
+
+  - id: email_3
+    title: Email 3 - Social Proof
+    instruction: |
+      Third email (Day 5-7):
+      - Subject line
+      - Case study/testimonial
+      - Results and outcomes
+      - Credibility building
+    elicit: true
+
+  - id: email_4
+    title: Email 4 - Offer/CTA
+    instruction: |
+      Fourth email (Day 10-14):
+      - Subject line
+      - Clear offer
+      - Urgency element
+      - Strong CTA
+    elicit: true

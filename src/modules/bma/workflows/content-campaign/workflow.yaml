@@ -1,0 +1,125 @@
+# Content Marketing Campaign Workflow
+# Migrated from v4 marketing-advertising expansion pack
+name: content-campaign
+description: |
+  End-to-end pipeline for planning, creating, and optimizing
+  content marketing campaigns using the BMAD™ Marketing team.
+author: "BMad Marketing"
+
+# Critical variables from config
+config_source: "{project-root}/{bmad_folder}/bma/config.yaml"
+marketing_output_folder: "{config_source}:marketing_output_folder"
+default_brand_voice: "{config_source}:default_brand_voice"
+user_name: "{config_source}:user_name"
+communication_language: "{config_source}:communication_language"
+date: system-generated
+
+# Workflow components
+installed_path: "{project-root}/{bmad_folder}/bma/workflows/content-campaign"
+instructions: "{installed_path}/instructions.md"
+
+# Templates
+campaign_brief_template: "{project-root}/{bmad_folder}/bma/templates/campaign-brief-tmpl.yaml"
+content_calendar_template: "{project-root}/{bmad_folder}/bma/templates/content-calendar-tmpl.yaml"
+blog_post_template: "{project-root}/{bmad_folder}/bma/templates/blog-post-tmpl.yaml"
+
+# Checklists
+seo_content_checklist: "{project-root}/{bmad_folder}/bma/checklists/seo-content-checklist.md"
+content_quality_checklist: "{project-root}/{bmad_folder}/bma/checklists/content-quality-checklist.md"
+
+# Data files
+content_frameworks: "{project-root}/{bmad_folder}/bma/data/content-frameworks.md"
+headline_formulas: "{project-root}/{bmad_folder}/bma/data/headline-formulas.md"
+
+# Output files
+status_file: "{marketing_output_folder}/campaign-status.yaml"
+default_output_file: "{marketing_output_folder}/content-campaign.md"
+
+# Smart input file references
+input_file_patterns:
+  brand_guidelines:
+    description: "Brand voice and style guidelines (optional)"
+    whole: "{marketing_output_folder}/*brand*.md"
+    sharded: "{marketing_output_folder}/*brand*/index.md"
+    load_strategy: "FULL_LOAD"
+  keyword_research:
+    description: "Keyword research data (optional)"
+    whole: "{marketing_output_folder}/*keyword*.md"
+    load_strategy: "FULL_LOAD"
+
+standalone: true
+
+# Multi-agent workflow steps
+agents:
+  - content-writer
+  - seo-specialist
+  - social-media-manager
+  - analytics-automation-specialist
+
+steps:
+  - id: strategy
+    title: Define content strategy
+    agent: content-writer
+    uses: campaign_brief_template
+    outputs: campaign_brief
+
+  - id: keyword_research
+    title: Conduct keyword research
+    agent: seo-specialist
+    inputs: campaign_brief
+    outputs: keyword_map
+
+  - id: content_calendar
+    title: Create content calendar
+    agent: content-writer
+    inputs:
+      - campaign_brief
+      - keyword_map
+    uses: content_calendar_template
+    outputs: content_calendar
+
+  - id: content_creation
+    title: Create content pieces
+    agent: content-writer
+    repeat_for: content_calendar
+    outputs: content_pieces
+
+  - id: seo_optimization
+    title: Optimize for SEO
+    agent: seo-specialist
+    inputs: content_pieces
+    uses: seo_content_checklist
+    outputs: optimized_content
+
+  - id: social_distribution
+    title: Plan social distribution
+    agent: social-media-manager
+    inputs: optimized_content
+    outputs: social_plan
+
+  - id: tracking_setup
+    title: Set up tracking
+    agent: analytics-automation-specialist
+    inputs: campaign_brief
+    outputs: tracking_config
+
+outputs:
+  - optimized_content
+  - social_plan
+  - tracking_config
+
+web_bundle:
+  name: "content-campaign"
+  description: "End-to-end content marketing workflow"
+  author: "BMad Marketing"
+  instructions: "{bmad_folder}/bma/workflows/content-campaign/instructions.md"
+  validation: "{bmad_folder}/bma/checklists/content-quality-checklist.md"
+  web_bundle_files:
+    - "{bmad_folder}/bma/workflows/content-campaign/instructions.md"
+    - "{bmad_folder}/bma/templates/campaign-brief-tmpl.yaml"
+    - "{bmad_folder}/bma/templates/content-calendar-tmpl.yaml"
+    - "{bmad_folder}/bma/templates/blog-post-tmpl.yaml"
+    - "{bmad_folder}/bma/checklists/content-quality-checklist.md"
+    - "{bmad_folder}/bma/checklists/seo-content-checklist.md"
+    - "{bmad_folder}/bma/data/content-frameworks.md"
+    - "{bmad_folder}/bma/data/headline-formulas.md"

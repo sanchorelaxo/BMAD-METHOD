@@ -1,0 +1,72 @@
+# <!-- Powered by BMAD™ Core -->
+---
+template:
+  id: landing-page-tmpl
+  name: Landing Page
+  version: 1.0
+  description: High-converting landing page template
+  output:
+    format: markdown
+    filename: "{{page_name}}-landing.md"
+
+workflow:
+  elicitation: true
+  allow_skip: false
+
+sections:
+  - id: hero
+    title: Hero Section
+    instruction: |
+      Above-the-fold content:
+      - Headline with main benefit
+      - Subheadline with clarity
+      - Hero image/video concept
+      - Primary CTA
+    elicit: true
+
+  - id: problem_solution
+    title: Problem/Solution
+    instruction: |
+      Build the case:
+      - Pain point identification
+      - Solution introduction
+      - Key differentiators
+    elicit: true
+
+  - id: benefits
+    title: Benefits Section
+    instruction: |
+      Highlight value:
+      - 3-5 key benefits
+      - Supporting visuals
+      - Proof points
+    elicit: true
+
+  - id: social_proof
+    title: Social Proof
+    instruction: |
+      Build credibility:
+      - Testimonials
+      - Logos/partners
+      - Statistics
+      - Case studies
+    elicit: true
+
+  - id: cta_section
+    title: CTA Section
+    instruction: |
+      Drive conversion:
+      - Offer summary
+      - Form or button
+      - Urgency element
+      - Risk reversal
+    elicit: true
+
+  - id: faq
+    title: FAQ Section
+    instruction: |
+      Handle objections:
+      - Common questions
+      - Objection handling
+      - Additional details
+    elicit: true

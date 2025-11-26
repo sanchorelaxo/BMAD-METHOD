@@ -1,0 +1,11 @@
+# <!-- Powered by BMAD-CORE™ -->
+bundle:
+  name: Paid Acquisition Team
+  icon: 💰
+  description: Team focused on paid advertising and conversion optimization
+agents:
+  - paid-ads-specialist
+  - analytics-automation-specialist
+  - ecommerce-specialist
+  - content-writer
+party: "./default-party.csv"

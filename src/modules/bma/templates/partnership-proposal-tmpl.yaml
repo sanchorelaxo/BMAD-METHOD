@@ -1,0 +1,61 @@
+# <!-- Powered by BMAD™ Core -->
+---
+template:
+  id: partnership-proposal-tmpl
+  name: Partnership Proposal
+  version: 1.0
+  description: Business partnership proposal template
+  output:
+    format: markdown
+    filename: "{{partner_name}}-proposal.md"
+
+workflow:
+  elicitation: true
+  allow_skip: false
+
+sections:
+  - id: introduction
+    title: Introduction
+    instruction: |
+      Set the context:
+      - Your company overview
+      - Why this partnership
+      - Mutual benefits preview
+    elicit: true
+
+  - id: opportunity
+    title: Partnership Opportunity
+    instruction: |
+      Define the collaboration:
+      - Partnership type
+      - Scope and activities
+      - Target outcomes
+    elicit: true
+
+  - id: value_proposition
+    title: Value Proposition
+    instruction: |
+      Explain the benefits:
+      - What you bring
+      - What they gain
+      - Audience/reach synergies
+    elicit: true
+
+  - id: terms
+    title: Proposed Terms
+    instruction: |
+      Outline the structure:
+      - Responsibilities
+      - Timeline
+      - Investment/resources
+      - Success metrics
+    elicit: true
+
+  - id: next_steps
+    title: Next Steps
+    instruction: |
+      Call to action:
+      - Immediate next step
+      - Contact information
+      - Timeline for response
+    elicit: true

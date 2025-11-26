@@ -1,0 +1,53 @@
+# <!-- Powered by BMAD™ Core -->
+---
+template:
+  id: cold-dm-tmpl
+  name: Cold DM Sequence
+  version: 1.0
+  description: Cold outreach DM sequence template
+  output:
+    format: markdown
+    filename: "{{campaign_name}}-cold-dm.md"
+
+workflow:
+  elicitation: true
+  allow_skip: false
+
+sections:
+  - id: target_profile
+    title: Target Profile
+    instruction: |
+      Define who you're reaching out to:
+      - Ideal prospect description
+      - Pain points to address
+      - Value you can provide
+      - Platform (LinkedIn, Twitter, Instagram)
+    elicit: true
+
+  - id: initial_message
+    title: Initial Message
+    instruction: |
+      Write the first outreach message:
+      - Personalization element
+      - Value-first approach
+      - Soft ask or question
+      - Keep under 150 words
+    elicit: true
+
+  - id: follow_up_1
+    title: Follow-Up 1 (3-5 days)
+    instruction: |
+      First follow-up message:
+      - Reference initial message
+      - Add new value
+      - Different angle
+    elicit: true
+
+  - id: follow_up_2
+    title: Follow-Up 2 (7-10 days)
+    instruction: |
+      Second follow-up:
+      - Final attempt
+      - Clear value prop
+      - Easy yes/no question
+    elicit: true

@@ -1,0 +1,90 @@
+# Email Sequence Workflow
+# Migrated from v4 marketing-advertising expansion pack
+name: email-sequence
+description: |
+  Complete workflow for creating automated email sequences
+  from strategy to deployment.
+author: "BMad Marketing"
+
+# Critical variables from config
+config_source: "{project-root}/{bmad_folder}/bma/config.yaml"
+marketing_output_folder: "{config_source}:marketing_output_folder"
+user_name: "{config_source}:user_name"
+communication_language: "{config_source}:communication_language"
+date: system-generated
+
+# Workflow components
+installed_path: "{project-root}/{bmad_folder}/bma/workflows/email-sequence"
+instructions: "{installed_path}/instructions.md"
+
+# Templates
+email_campaign_template: "{project-root}/{bmad_folder}/bma/templates/email-campaign-tmpl.yaml"
+drip_sequence_template: "{project-root}/{bmad_folder}/bma/templates/drip-sequence-tmpl.yaml"
+
+# Checklists
+email_quality_checklist: "{project-root}/{bmad_folder}/bma/checklists/email-quality-checklist.md"
+deliverability_checklist: "{project-root}/{bmad_folder}/bma/checklists/deliverability-checklist.md"
+
+# Output files
+status_file: "{marketing_output_folder}/email-sequence-status.yaml"
+default_output_file: "{marketing_output_folder}/email-sequence.md"
+
+standalone: true
+
+# Multi-agent workflow steps
+agents:
+  - email-marketer
+  - content-writer
+  - analytics-automation-specialist
+
+steps:
+  - id: sequence_strategy
+    title: Define sequence strategy
+    agent: email-marketer
+    uses: email_campaign_template
+    outputs: sequence_plan
+
+  - id: email_copy
+    title: Write email copy
+    agent: email-marketer
+    inputs: sequence_plan
+    outputs: email_drafts
+
+  - id: copy_review
+    title: Review and optimize copy
+    agent: content-writer
+    inputs: email_drafts
+    uses: email_quality_checklist
+    outputs: reviewed_emails
+
+  - id: automation_setup
+    title: Configure automation
+    agent: analytics-automation-specialist
+    inputs:
+      - sequence_plan
+      - reviewed_emails
+    outputs: automation_config
+
+  - id: testing
+    title: Test and validate
+    agent: email-marketer
+    inputs: automation_config
+    outputs: test_results
+
+outputs:
+  - reviewed_emails
+  - automation_config
+  - test_results
+
+web_bundle:
+  name: "email-sequence"
+  description: "Email sequence creation workflow"
+  author: "BMad Marketing"
+  instructions: "{bmad_folder}/bma/workflows/email-sequence/instructions.md"
+  validation: "{bmad_folder}/bma/checklists/email-quality-checklist.md"
+  web_bundle_files:
+    - "{bmad_folder}/bma/workflows/email-sequence/instructions.md"
+    - "{bmad_folder}/bma/templates/email-campaign-tmpl.yaml"
+    - "{bmad_folder}/bma/templates/drip-sequence-tmpl.yaml"
+    - "{bmad_folder}/bma/checklists/email-quality-checklist.md"
+    - "{bmad_folder}/bma/checklists/deliverability-checklist.md"

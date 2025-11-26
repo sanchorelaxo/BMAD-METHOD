@@ -1,0 +1,65 @@
+# <!-- Powered by BMAD™ Core -->
+---
+template:
+  id: seo-audit-tmpl
+  name: SEO Audit Report
+  version: 1.0
+  description: Comprehensive SEO audit template
+  output:
+    format: markdown
+    filename: "{{site_name}}-seo-audit.md"
+
+workflow:
+  elicitation: true
+  allow_skip: false
+
+sections:
+  - id: executive_summary
+    title: Executive Summary
+    instruction: |
+      High-level findings:
+      - Overall SEO health score
+      - Top 3 issues
+      - Top 3 opportunities
+      - Priority recommendations
+    elicit: true
+
+  - id: technical_seo
+    title: Technical SEO Analysis
+    instruction: |
+      Evaluate technical foundation:
+      - Site speed/Core Web Vitals
+      - Mobile-friendliness
+      - Crawlability/indexation
+      - Site architecture
+    elicit: true
+
+  - id: on_page_seo
+    title: On-Page SEO Analysis
+    instruction: |
+      Review on-page elements:
+      - Title tags and meta descriptions
+      - Header structure
+      - Content quality
+      - Internal linking
+    elicit: true
+
+  - id: off_page_seo
+    title: Off-Page SEO Analysis
+    instruction: |
+      Assess external factors:
+      - Backlink profile
+      - Domain authority
+      - Competitor comparison
+      - Link opportunities
+    elicit: true
+
+  - id: recommendations
+    title: Prioritized Recommendations
+    instruction: |
+      Action plan:
+      - Quick wins
+      - Medium-term improvements
+      - Long-term strategy
+      - Resource requirements
+    elicit: true

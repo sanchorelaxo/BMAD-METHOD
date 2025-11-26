@@ -1,0 +1,55 @@
+# <!-- Powered by BMAD™ Core -->
+---
+template:
+  id: influencer-brief-tmpl
+  name: Influencer Brief
+  version: 1.0
+  description: Influencer collaboration brief template
+  output:
+    format: markdown
+    filename: "{{campaign_name}}-influencer-brief.md"
+
+workflow:
+  elicitation: true
+  allow_skip: false
+
+sections:
+  - id: campaign_overview
+    title: Campaign Overview
+    instruction: |
+      Define the collaboration:
+      - Campaign name and goals
+      - Brand background
+      - Target audience
+      - Key messages
+    elicit: true
+
+  - id: deliverables
+    title: Deliverables
+    instruction: |
+      Specify content requirements:
+      - Content types (posts, stories, reels)
+      - Quantity and timeline
+      - Platform(s)
+      - Usage rights
+    elicit: true
+
+  - id: creative_guidelines
+    title: Creative Guidelines
+    instruction: |
+      Provide creative direction:
+      - Key talking points
+      - Required mentions/hashtags
+      - Brand dos and don'ts
+      - Approval process
+    elicit: true
+
+  - id: compensation
+    title: Compensation & Terms
+    instruction: |
+      Define the partnership terms:
+      - Payment structure
+      - Product/gifting
+      - Timeline and deadlines
+      - Exclusivity requirements
+    elicit: true

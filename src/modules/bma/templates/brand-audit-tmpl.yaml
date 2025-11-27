@@ -1,0 +1,290 @@
+# Brand Audit Template
+# Used by Brand Compliance Manager to catalog brand guidelines
+
+template:
+  name: brand-audit
+  description: Template for cataloging brand guidelines discovered from project files
+  version: "1.0"
+  category: compliance
+
+sections:
+  - name: brand_identity
+    fields:
+      - brand_name: ""
+      - brand_variations: |
+          - 
+      - tagline: ""
+      - positioning_statement: ""
+      - brand_story: ""
+      - brand_values: |
+          - 
+      - brand_personality: |
+          - 
+      - target_audience: ""
+
+  - name: logo_specifications
+    fields:
+      - primary_logo:
+          description: ""
+          file_reference: ""
+          minimum_size: ""
+          clear_space: ""
+      - secondary_logos: |
+          - 
+      - logo_variations:
+          full_color: ""
+          single_color: ""
+          reversed: ""
+          monochrome: ""
+      - prohibited_uses: |
+          - Do not stretch or distort
+          - Do not change colors
+          - Do not add effects
+          - Do not place on busy backgrounds
+      - co_branding_rules: ""
+
+  - name: color_palette
+    fields:
+      - primary_colors:
+          - name: ""
+            hex: ""
+            rgb: ""
+            cmyk: ""
+            pantone: ""
+            usage: ""
+      - secondary_colors:
+          - name: ""
+            hex: ""
+            rgb: ""
+            cmyk: ""
+            pantone: ""
+            usage: ""
+      - accent_colors:
+          - name: ""
+            hex: ""
+            rgb: ""
+            cmyk: ""
+            pantone: ""
+            usage: ""
+      - neutral_colors:
+          - name: ""
+            hex: ""
+            rgb: ""
+            cmyk: ""
+            pantone: ""
+            usage: ""
+      - color_ratios: ""
+      - color_accessibility_notes: ""
+
+  - name: typography
+    fields:
+      - primary_typeface:
+          name: ""
+          weights: ""
+          usage: "Headlines, titles"
+          fallback: ""
+          license: ""
+      - secondary_typeface:
+          name: ""
+          weights: ""
+          usage: "Body copy, paragraphs"
+          fallback: ""
+          license: ""
+      - web_fonts:
+          - name: ""
+            source: ""
+      - type_hierarchy:
+          h1: "size, weight, line-height"
+          h2: ""
+          h3: ""
+          h4: ""
+          body: ""
+          caption: ""
+          button: ""
+      - type_scale: ""
+      - line_spacing: ""
+      - letter_spacing: ""
+
+  - name: voice_and_tone
+    fields:
+      - voice_characteristics: |
+          - 
+      - tone_by_context:
+          marketing: ""
+          support: ""
+          social: ""
+          formal: ""
+      - language_level: ""
+      - formality_scale: ""
+      - terminology_glossary:
+          preferred_terms: |
+            - 
+          avoided_terms: |
+            - 
+      - writing_style_guide: ""
+      - cta_guidelines: ""
+
+  - name: messaging_framework
+    fields:
+      - value_proposition: ""
+      - key_messages:
+          primary: ""
+          secondary: |
+            - 
+      - elevator_pitch: ""
+      - boilerplate: ""
+      - differentiators: |
+          - 
+      - proof_points: |
+          - 
+
+  - name: imagery_guidelines
+    fields:
+      - photography_style:
+          description: ""
+          subjects: ""
+          lighting: ""
+          color_treatment: ""
+          composition: ""
+      - illustration_style:
+          description: ""
+          line_weight: ""
+          color_usage: ""
+      - iconography:
+          style: ""
+          stroke_weight: ""
+          corner_radius: ""
+          size_grid: ""
+      - graphic_elements:
+          patterns: ""
+          shapes: ""
+          textures: ""
+      - image_quality_standards:
+          minimum_resolution: "300 DPI print, 72 DPI web"
+          aspect_ratios: ""
+
+  - name: digital_standards
+    fields:
+      - website_elements:
+          header: ""
+          footer: ""
+          navigation: ""
+          buttons: ""
+          forms: ""
+      - email_standards:
+          header: ""
+          footer: ""
+          typography: ""
+          button_style: ""
+      - social_media:
+          profile_image: ""
+          cover_image: ""
+          post_templates: ""
+      - app_standards: ""
+
+  - name: print_standards
+    fields:
+      - paper_stock: ""
+      - finish_options: ""
+      - bleed_margins: ""
+      - color_profiles: ""
+      - collateral_templates: |
+          - Business cards
+          - Letterhead
+          - Envelopes
+          - Brochures
+
+  - name: video_motion_standards
+    fields:
+      - logo_animation: ""
+      - lower_thirds: ""
+      - title_cards: ""
+      - end_cards: ""
+      - transition_style: ""
+      - audio_branding:
+          music_style: ""
+          voiceover_tone: ""
+          audio_logo: ""
+
+  - name: legal_requirements
+    fields:
+      - trademark_usage:
+          registered_marks: |
+            - 
+          trademark_symbols: ""
+      - copyright_notice: ""
+      - required_disclaimers: |
+          - 
+      - industry_regulations: |
+          - 
+      - privacy_requirements: ""
+      - endorsement_guidelines: ""
+
+  - name: source_files
+    fields:
+      - guidelines_files_found: |
+          - 
+      - last_updated: ""
+      - version: ""
+      - owner: ""
+
+output_format: |
+  # Brand Guidelines Catalog
+  
+  **Generated:** {date}  
+  **Source Files:** {guidelines_files_found}
+  
+  ---
+  
+  ## Brand Identity
+  
+  **Brand Name:** {brand_name}  
+  **Tagline:** {tagline}  
+  **Positioning:** {positioning_statement}
+  
+  ### Brand Values
+  {brand_values}
+  
+  ### Brand Personality
+  {brand_personality}
+  
+  ---
+  
+  ## Visual Identity
+  
+  ### Logo
+  [Logo specifications]
+  
+  ### Colors
+  [Color palette details]
+  
+  ### Typography
+  [Typography system]
+  
+  ---
+  
+  ## Voice & Messaging
+  
+  ### Voice Characteristics
+  {voice_characteristics}
+  
+  ### Key Messages
+  {key_messages}
+  
+  ---
+  
+  ## Application Guidelines
+  
+  ### Digital
+  [Digital standards]
+  
+  ### Print
+  [Print standards]
+  
+  ### Video
+  [Video standards]
+  
+  ---
+  
+  ## Legal Requirements
+  [Legal and compliance requirements]

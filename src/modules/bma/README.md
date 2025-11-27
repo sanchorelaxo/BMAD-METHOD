@@ -8,15 +8,15 @@ Comprehensive AI-powered marketing and advertising framework providing specializ
 
 ## 📦 Package Contents
 
-- **10 Specialized Agents** - Expert AI personas for every marketing discipline
-- **3 Multi-Agent Workflows** - End-to-end processes from strategy to execution
+- **11 Specialized Agents** - Expert AI personas for every marketing discipline
+- **4 Multi-Agent Workflows** - End-to-end processes from strategy to execution
 - **24 Quality Checklists** - Validation for content, email, ads, SEO, and more
 - **25 Templates** - Ready-to-use marketing asset templates
 - **4 Data Files** - Knowledge base and frameworks reference
 
 ---
 
-## 🤖 Agent Team (10 Agents)
+## 🤖 Agent Team (11 Agents)
 
 | Agent | Icon | Description |
 |-------|------|-------------|
@@ -30,6 +30,7 @@ Comprehensive AI-powered marketing and advertising framework providing specializ
 | **Analytics & Automation** | 📊 | Analytics, reporting, automation, CRM, lead scoring |
 | **E-commerce Specialist** | 🛒 | Product pages, cart optimization, conversion funnels |
 | **Brand & Creative** | 🎨 | Brand identity, visual design, AR/VR experiences |
+| **Brand Compliance Manager** | ✅ | Multi-medium brand compliance audits, guideline enforcement |
 
 ---
 
@@ -38,6 +39,7 @@ Comprehensive AI-powered marketing and advertising framework providing specializ
 1. **Content Campaign** - End-to-end content marketing workflow
 2. **Email Sequence** - Automated email campaign creation
 3. **Paid Advertising** - PPC and paid social campaign launch
+4. **Brand Compliance** - Multi-agent brand compliance audit across all mediums
 
 *Additional workflows (social-media-launch, seo-optimization, influencer-outreach, lead-generation, ecommerce-optimization) can be added using the same pattern.*
 
@@ -49,11 +51,12 @@ Comprehensive AI-powered marketing and advertising framework providing specializ
 bma/
 ├── _module-installer/
 │   └── install-config.yaml    # Module installation configuration
-├── agents/                     # 10 specialized agent definitions (.agent.yaml)
+├── agents/                     # 11 specialized agent definitions (.agent.yaml)
 ├── workflows/                  # Multi-agent workflow definitions
 │   ├── content-campaign/
 │   ├── email-sequence/
-│   └── paid-advertising/
+│   ├── paid-advertising/
+│   └── brand-compliance/
 ├── teams/                      # Agent team bundles
 │   ├── team-marketing-full.yaml
 │   ├── team-content-growth.yaml
@@ -199,6 +202,66 @@ npx bmad-method@alpha install
 - **Lead Generation**: Capture, scoring, nurturing, conversion
 - **Brand Building**: Awareness, positioning, storytelling
 - **Analytics**: Tracking, reporting, optimization
+- **Brand Compliance**: Multi-medium audits, guideline enforcement
+
+---
+
+## ✅ Brand Compliance Setup
+
+The **Brand Compliance Manager** agent automatically discovers brand guidelines from MD files in your project root. Place your brand documentation using any of these naming patterns:
+
+### English
+- `*brand*.md` - Brand guidelines, brand book
+- `*style*.md` - Style guides
+- `*guideline*.md` - General guidelines
+- `*identity*.md` - Visual identity
+- `*compliance*.md` - Compliance requirements
+- `*standards*.md` - Brand standards
+
+### Français
+- `*marque*.md` - Directives de marque
+- `*charte*.md` - Charte graphique
+- `*graphique*.md` - Identité graphique
+- `*identite*.md` - Identité visuelle
+- `*conformite*.md` - Exigences de conformité
+- `*normes*.md` - Normes de marque
+
+### Language-Agnostic
+- `README.md` - Project readme (may contain brand info)
+- `*logo*.md` - Logo usage rules
+- `*color*.md` / `*colour*.md` - Color palette specifications
+- `*font*.md` - Font/typography rules
+- `*typo*.md` - Typography guidelines
+
+### Example Brand Guidelines File
+
+Create a `brand-guidelines.md` (or `charte-graphique.md` for French) in your project root:
+
+```markdown
+# Brand Guidelines
+
+## Logo
+- Primary logo: [specifications]
+- Minimum size: 24px height
+- Clear space: 1x logo height
+
+## Colors
+- Primary: #1A73E8 (Blue)
+- Secondary: #34A853 (Green)
+- Accent: #FBBC04 (Yellow)
+
+## Typography
+- Headlines: Inter Bold
+- Body: Inter Regular
+- Code: JetBrains Mono
+
+## Voice & Tone
+- Professional but approachable
+- Clear and concise
+- Action-oriented
+```
+
+The compliance workflow will automatically load these files and audit all marketing materials against them
 
 ---
 

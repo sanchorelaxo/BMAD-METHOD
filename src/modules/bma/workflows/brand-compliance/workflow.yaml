@@ -1,0 +1,335 @@
+# Brand Compliance Review Workflow
+# Multi-agent workflow for comprehensive brand compliance auditing across all mediums
+
+name: brand-compliance
+description: |
+  End-to-end workflow for auditing brand compliance across all marketing
+  channels and mediums. Coordinates multiple specialist agents to ensure
+  comprehensive coverage of visual, voice, digital, print, video, social,
+  advertising, legal, and accessibility compliance.
+author: "BMad Marketing"
+
+# Critical variables from config
+config_source: "{project-root}/{bmad_folder}/bma/config.yaml"
+marketing_output_folder: "{config_source}:marketing_output_folder"
+default_brand_voice: "{config_source}:default_brand_voice"
+user_name: "{config_source}:user_name"
+communication_language: "{config_source}:communication_language"
+date: system-generated
+
+# Workflow components
+installed_path: "{project-root}/{bmad_folder}/bma/workflows/brand-compliance"
+instructions: "{installed_path}/instructions.md"
+
+# Templates
+compliance_report_template: "{project-root}/{bmad_folder}/bma/templates/compliance-report-tmpl.yaml"
+brand_audit_template: "{project-root}/{bmad_folder}/bma/templates/brand-audit-tmpl.yaml"
+
+# Checklists
+brand_compliance_checklist: "{project-root}/{bmad_folder}/bma/checklists/brand-compliance-audit-checklist.md"
+brand_consistency_checklist: "{project-root}/{bmad_folder}/bma/checklists/brand-consistency-checklist.md"
+creative_review_checklist: "{project-root}/{bmad_folder}/bma/checklists/creative-review-checklist.md"
+social_content_checklist: "{project-root}/{bmad_folder}/bma/checklists/social-content-checklist.md"
+video_ad_checklist: "{project-root}/{bmad_folder}/bma/checklists/video-ad-checklist.md"
+paid_ads_checklist: "{project-root}/{bmad_folder}/bma/checklists/paid-ads-checklist.md"
+email_quality_checklist: "{project-root}/{bmad_folder}/bma/checklists/email-quality-checklist.md"
+
+# Brand guidelines discovery - searches project root for brand documentation
+# Supports multilingual file naming (EN, FR, ES, DE, PT)
+brand_guidelines_discovery:
+  description: "Automatically discovers brand guidelines from MD files in project root"
+  search_patterns:
+    # English
+    - "{project-root}/*brand*.md"
+    - "{project-root}/*style*.md"
+    - "{project-root}/*guideline*.md"
+    - "{project-root}/*identity*.md"
+    - "{project-root}/*compliance*.md"
+    - "{project-root}/*standards*.md"
+    # French / Français
+    - "{project-root}/*marque*.md"
+    - "{project-root}/*charte*.md"
+    - "{project-root}/*graphique*.md"
+    - "{project-root}/*identite*.md"
+    - "{project-root}/*conformite*.md"
+    - "{project-root}/*normes*.md"
+    # Common (language-agnostic)
+    - "{project-root}/README.md"
+    - "{project-root}/*logo*.md"
+    - "{project-root}/*color*.md"
+    - "{project-root}/*colour*.md"
+    - "{project-root}/*font*.md"
+    - "{project-root}/*typo*.md"
+  load_strategy: "FULL_LOAD"
+
+# Output files
+status_file: "{marketing_output_folder}/brand-compliance-status.yaml"
+default_output_file: "{marketing_output_folder}/brand-compliance-report.md"
+
+# Smart input file references
+input_file_patterns:
+  brand_guidelines:
+    description: "Brand guidelines and style documentation"
+    whole: "{project-root}/*brand*.md"
+    sharded: "{project-root}/*brand*/index.md"
+    load_strategy: "FULL_LOAD"
+  materials_to_audit:
+    description: "Marketing materials to audit for compliance"
+    whole: "{marketing_output_folder}/**/*.md"
+    load_strategy: "FULL_LOAD"
+
+standalone: true
+
+# Multi-agent workflow - all agents needed for comprehensive compliance
+agents:
+  - brand-compliance-manager    # Primary coordinator and auditor
+  - brand-creative-specialist   # Visual identity expert
+  - content-writer              # Voice and messaging expert
+  - social-media-manager        # Social media compliance
+  - video-marketing-specialist  # Video/motion compliance
+  - email-marketer              # Email compliance
+  - paid-ads-specialist         # Advertising compliance
+  - seo-specialist              # Digital/web compliance
+
+steps:
+  # Phase 1: Discovery and Setup
+  - id: guidelines_discovery
+    title: Discover and load brand guidelines
+    agent: brand-compliance-manager
+    description: |
+      Search project root for brand documentation files.
+      Extract and catalog all brand rules including:
+      - Logo specifications and usage rules
+      - Color palette (hex, RGB, CMYK, Pantone)
+      - Typography system
+      - Voice and tone guidelines
+      - Messaging framework
+      - Visual style rules
+      - Legal requirements
+    outputs: brand_guidelines_catalog
+
+  - id: audit_scope
+    title: Define audit scope and materials
+    agent: brand-compliance-manager
+    inputs: brand_guidelines_catalog
+    description: |
+      Identify all materials to be audited.
+      Categorize by medium:
+      - Digital assets
+      - Print materials
+      - Video content
+      - Social media
+      - Advertising
+      - Email campaigns
+    outputs: audit_scope_definition
+
+  # Phase 2: Specialist Reviews (can run in parallel)
+  - id: visual_compliance
+    title: Audit visual identity compliance
+    agent: brand-creative-specialist
+    inputs:
+      - brand_guidelines_catalog
+      - audit_scope_definition
+    uses: creative_review_checklist
+    description: |
+      Review all visual elements:
+      - Logo usage
+      - Color palette adherence
+      - Typography compliance
+      - Imagery and graphics
+    outputs: visual_compliance_findings
+
+  - id: voice_compliance
+    title: Audit voice and messaging compliance
+    agent: content-writer
+    inputs:
+      - brand_guidelines_catalog
+      - audit_scope_definition
+    uses: brand_consistency_checklist
+    description: |
+      Review all written content:
+      - Brand voice consistency
+      - Messaging alignment
+      - Terminology usage
+      - Content standards
+    outputs: voice_compliance_findings
+
+  - id: social_compliance
+    title: Audit social media compliance
+    agent: social-media-manager
+    inputs:
+      - brand_guidelines_catalog
+      - audit_scope_definition
+    uses: social_content_checklist
+    description: |
+      Review social media presence:
+      - Profile elements
+      - Content compliance
+      - Platform-specific requirements
+      - Engagement standards
+    outputs: social_compliance_findings
+
+  - id: video_compliance
+    title: Audit video/motion compliance
+    agent: video-marketing-specialist
+    inputs:
+      - brand_guidelines_catalog
+      - audit_scope_definition
+    uses: video_ad_checklist
+    description: |
+      Review video and motion content:
+      - Visual elements
+      - Motion graphics
+      - Audio branding
+      - Platform requirements
+    outputs: video_compliance_findings
+
+  - id: email_compliance
+    title: Audit email compliance
+    agent: email-marketer
+    inputs:
+      - brand_guidelines_catalog
+      - audit_scope_definition
+    uses: email_quality_checklist
+    description: |
+      Review email marketing:
+      - Template compliance
+      - Header/footer elements
+      - Typography and colors
+      - Mobile responsiveness
+    outputs: email_compliance_findings
+
+  - id: advertising_compliance
+    title: Audit advertising compliance
+    agent: paid-ads-specialist
+    inputs:
+      - brand_guidelines_catalog
+      - audit_scope_definition
+    uses: paid_ads_checklist
+    description: |
+      Review advertising materials:
+      - Creative compliance
+      - Platform requirements
+      - Legal requirements
+      - Performance marketing
+    outputs: advertising_compliance_findings
+
+  - id: digital_compliance
+    title: Audit digital/web compliance
+    agent: seo-specialist
+    inputs:
+      - brand_guidelines_catalog
+      - audit_scope_definition
+    description: |
+      Review digital presence:
+      - Website elements
+      - Landing pages
+      - Meta information
+      - Technical SEO brand elements
+    outputs: digital_compliance_findings
+
+  # Phase 3: Consolidation and Reporting
+  - id: legal_accessibility_review
+    title: Review legal and accessibility compliance
+    agent: brand-compliance-manager
+    inputs:
+      - brand_guidelines_catalog
+      - visual_compliance_findings
+      - voice_compliance_findings
+      - social_compliance_findings
+      - video_compliance_findings
+      - email_compliance_findings
+      - advertising_compliance_findings
+      - digital_compliance_findings
+    uses: brand_compliance_checklist
+    description: |
+      Comprehensive legal and accessibility review:
+      - Trademark and copyright
+      - Disclosure requirements
+      - Industry regulations
+      - Claims substantiation
+      - WCAG accessibility
+    outputs: legal_accessibility_findings
+
+  - id: consolidate_findings
+    title: Consolidate all compliance findings
+    agent: brand-compliance-manager
+    inputs:
+      - visual_compliance_findings
+      - voice_compliance_findings
+      - social_compliance_findings
+      - video_compliance_findings
+      - email_compliance_findings
+      - advertising_compliance_findings
+      - digital_compliance_findings
+      - legal_accessibility_findings
+    description: |
+      Merge all findings into unified report:
+      - Categorize by severity
+      - Identify patterns
+      - Calculate compliance scores
+      - Prioritize remediation
+    outputs: consolidated_findings
+
+  - id: generate_report
+    title: Generate comprehensive compliance report
+    agent: brand-compliance-manager
+    inputs: consolidated_findings
+    uses: compliance_report_template
+    description: |
+      Create final compliance report:
+      - Executive summary
+      - Scores by category
+      - Detailed findings
+      - Remediation roadmap
+      - Recommendations
+    outputs: compliance_report
+
+  - id: remediation_plan
+    title: Create remediation action plan
+    agent: brand-compliance-manager
+    inputs:
+      - compliance_report
+      - consolidated_findings
+    description: |
+      Develop actionable remediation plan:
+      - Immediate actions (critical issues)
+      - Short-term fixes (high priority)
+      - Medium-term improvements
+      - Long-term process changes
+      - Training recommendations
+    outputs: remediation_plan
+
+outputs:
+  - brand_guidelines_catalog
+  - compliance_report
+  - remediation_plan
+
+# Workflow triggers
+triggers:
+  - type: manual
+    description: Run on-demand compliance audit
+  - type: scheduled
+    description: Quarterly compliance review
+    schedule: "0 9 1 */3 *"  # First day of each quarter at 9 AM
+  - type: event
+    description: Pre-campaign launch compliance check
+    event: campaign_launch
+
+web_bundle:
+  name: "brand-compliance"
+  description: "Multi-agent brand compliance audit workflow"
+  author: "BMad Marketing"
+  instructions: "{bmad_folder}/bma/workflows/brand-compliance/instructions.md"
+  validation: "{bmad_folder}/bma/checklists/brand-compliance-audit-checklist.md"
+  web_bundle_files:
+    - "{bmad_folder}/bma/workflows/brand-compliance/instructions.md"
+    - "{bmad_folder}/bma/checklists/brand-compliance-audit-checklist.md"
+    - "{bmad_folder}/bma/checklists/brand-consistency-checklist.md"
+    - "{bmad_folder}/bma/checklists/creative-review-checklist.md"
+    - "{bmad_folder}/bma/checklists/social-content-checklist.md"
+    - "{bmad_folder}/bma/checklists/video-ad-checklist.md"
+    - "{bmad_folder}/bma/checklists/paid-ads-checklist.md"
+    - "{bmad_folder}/bma/checklists/email-quality-checklist.md"
+    - "{bmad_folder}/bma/templates/compliance-report-tmpl.yaml"
+    - "{bmad_folder}/bma/templates/brand-audit-tmpl.yaml"

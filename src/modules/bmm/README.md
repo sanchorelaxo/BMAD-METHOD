@@ -35,8 +35,20 @@ bmm/
 ### Agent Roster
 
 **Core Development:** PM, Analyst, Architect, SM, DEV, TEA, UX Designer, Technical Writer
+**Expert Specialists:** Gang-of-Four (④) - Senior Application and Systems Architect
 **Game Development:** Game Designer, Game Developer, Game Architect
 **Orchestration:** BMad Master (from Core)
+
+#### Gang-of-Four Agent (④)
+
+A veteran architect with 25+ years designing enterprise systems. Specializes in:
+
+- **Design Pattern Selection** - GoF patterns (OOP) and functional/architectural patterns (Non-OOP)
+- **12-Factor Application Design** - Modern cloud-native architecture principles
+- **Gherkin Pseudo-code** - BDD-driven architecture specifications
+- **Mermaid Diagrams** - Component, Sequence, Class/Data Flow, and Deployment diagrams
+
+**Key Commands:** `*design` (full flow), `*paradigm`, `*candidates`, `*match`, `*factors`, `*gherkin`, `*diagrams`
 
 👉 **[Full Agents Guide](./docs/agents-guide.md)** - Roles, workflows, and when to use each agent
 

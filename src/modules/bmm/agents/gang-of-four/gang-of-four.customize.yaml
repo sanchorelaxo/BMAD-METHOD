@@ -1,0 +1,116 @@
+# GangOfFour Customization File
+# ================================
+# This file lets you tweak GangOfFour's behavior without modifying core agent files.
+# Uncomment and modify sections as needed. Changes take effect on next agent activation.
+
+# ============================================================================
+# PERSONALITY TWEAKS
+# ============================================================================
+
+# Override communication style (uncomment to use)
+# communication_style_override: |
+#   Straight-to-the-point efficient delivery. No fluff.
+#   [Add your modifications here]
+
+# Add or modify principles (these ADD to existing principles)
+# additional_principles:
+#   - I believe [your custom principle here]
+#   - I operate [your custom operating rule here]
+
+# Disable specific principles by index (0-based)
+# disabled_principles: [3, 7]  # Example: disable principles 4 and 8
+
+# ============================================================================
+# COMMAND MODIFICATIONS
+# ============================================================================
+
+# Add new commands
+# additional_commands:
+#   - trigger: mycommand
+#     action: '#my-custom-prompt'
+#     description: 'My custom command description'
+
+# Disable specific commands by trigger name
+# disabled_commands: ['history']  # Example: disable the history command
+
+# ============================================================================
+# PATTERN MATCHING TWEAKS
+# ============================================================================
+
+# Preferred patterns (always suggest these first when applicable)
+preferred_patterns:
+  oop:
+    - Strategy
+    - Factory Method
+    - Observer
+  non_oop:
+    - CQRS
+    - Event Sourcing
+    - Circuit Breaker
+
+# Patterns to avoid (warn user if these are candidates)
+# avoid_patterns:
+#   - Singleton  # Example: always warn about Singleton
+
+# Minimum synergy score for secondary patterns (default: 0.4)
+# secondary_pattern_threshold: 0.4
+
+# ============================================================================
+# OUTPUT PREFERENCES
+# ============================================================================
+
+# Default output depth (A, B, or C)
+# default_output_depth: C
+
+# Default paradigm determination method (A, B, or C)
+# default_paradigm_method: C
+
+# Always include specific diagram types
+# required_diagrams:
+#   - component
+#   - sequence
+#   - deployment
+
+# ============================================================================
+# TWELVE FACTORS EMPHASIS
+# ============================================================================
+
+# Factors to always emphasize
+emphasized_factors:
+  - Config  # III - Store config in environment
+  - Disposability  # IX - Fast startup, graceful shutdown
+  - Dev/Prod Parity  # X - Keep environments similar
+
+# Modern extensions to always include
+emphasized_extensions:
+  - Containerization
+  - Resilience Patterns
+  - Event-Driven Architecture
+
+# ============================================================================
+# MEMORY PREFERENCES
+# ============================================================================
+
+# Auto-save session decisions to memories.md
+auto_remember: true
+
+# Auto-archive completed architectures to history/
+auto_archive: true
+
+# Maximum history entries to keep (0 = unlimited)
+# max_history_entries: 50
+
+# ============================================================================
+# EXPERIMENTAL FEATURES
+# ============================================================================
+
+# Enable experimental features (use with caution)
+experimental:
+  # Pattern conflict detection - warn when selected patterns may conflict
+  conflict_detection: true
+  
+  # Suggest refactoring patterns based on requirements
+  # refactoring_suggestions: false
+  
+  # Generate test scenarios in Gherkin output
+  # include_test_scenarios: false

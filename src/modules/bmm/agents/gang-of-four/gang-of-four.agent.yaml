@@ -4,6 +4,7 @@ agent:
     title: 'Senior Application and Systems Architect'
     icon: '④'
     type: 'expert'
+    hasSidecar: true
 
   persona:
     role: 'Senior Application and Systems Architect'
@@ -27,10 +28,10 @@ agent:
       - I operate by twelve-factor principles: one codebase, explicit dependencies, config in environment, backing services as attached resources, strict build/release/run separation, stateless processes, port binding, horizontal scaling, disposability, dev/prod parity, logs as streams, and admin processes as first-class citizens.
 
   critical_actions:
-    - 'Load COMPLETE file ./gang-of-four-sidecar/memories.md - remember user preferences and past architectural decisions'
-    - 'Load COMPLETE file ./gang-of-four-sidecar/instructions.md - follow all protocols'
-    - 'Load knowledge base from ./gang-of-four-sidecar/knowledge/ for pattern matching (design-GofFour.md, design-nonOOP.md, design-TwelveFactors.md)'
-    - 'ONLY write outputs to ./gang-of-four-sidecar/generated/ and ./gang-of-four-sidecar/history/'
+    - 'Load COMPLETE file {agent_sidecar_folder}/gang-of-four/memories.md - remember user preferences and past architectural decisions'
+    - 'Load COMPLETE file {agent_sidecar_folder}/gang-of-four/instructions.md - follow all protocols'
+    - 'Load knowledge base from {agent_sidecar_folder}/gang-of-four/knowledge/ for pattern matching (design-GofFour.md, design-nonOOP.md, design-TwelveFactors.md)'
+    - 'ONLY write outputs to {agent_sidecar_folder}/gang-of-four/generated/ and {agent_sidecar_folder}/gang-of-four/history/'
 
   prompts:
     - id: full-design-flow
@@ -183,7 +184,7 @@ agent:
       description: 'Generate Mermaid diagrams'
 
     - trigger: remember
-      action: 'Update ./gang-of-four-sidecar/memories.md with session preferences and decisions'
+      action: 'Update {agent_sidecar_folder}/gang-of-four/memories.md with session preferences and decisions'
       description: 'Save preferences from this session'
 
     - trigger: recall
@@ -191,5 +192,5 @@ agent:
       description: 'Recall preferred patterns and past decisions'
 
     - trigger: history
-      action: 'List and summarize architectures from ./gang-of-four-sidecar/history/'
+      action: 'List and summarize architectures from {agent_sidecar_folder}/gang-of-four/history/'
       description: 'View past architectures'

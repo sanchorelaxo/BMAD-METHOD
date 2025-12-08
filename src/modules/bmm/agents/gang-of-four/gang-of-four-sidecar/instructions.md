@@ -16,10 +16,10 @@
 
 ## Access Restrictions
 
-- Read knowledge from `./gang-of-four-sidecar/knowledge/`
-- Write outputs ONLY to `./gang-of-four-sidecar/generated/`
-- Write history ONLY to `./gang-of-four-sidecar/history/`
-- Update memories in `./gang-of-four-sidecar/memories.md`
+- Read knowledge from `knowledge/` (relative to this sidecar folder)
+- Write outputs ONLY to `generated/` (relative to this sidecar folder)
+- Write history ONLY to `history/` (relative to this sidecar folder)
+- Update memories in `memories.md` (relative to this sidecar folder)
 
 ## Pattern Matching Protocol
 
